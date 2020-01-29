@@ -1,22 +1,16 @@
 import './Header.scss';
-import React, { useState } from 'react';
-import cn from 'classnames';
-
-const headerButton = ['home', 'projects'];
+import React, { useContext } from 'react';
+import ContentWrapper from '@/components/ContentWrapper/ContentWrapper';
+import { StoreContext } from '@/contexts/StoreContext';
 
 const Header = () => {
-  const [isSelected, setIsSelected] = useState(0);
+  const { state, dispatch } = useContext(StoreContext);
+  console.log(state);
   return (
     <div className="header">
-      {headerButton.map((button, i) => (
-        <button
-          key={button}
-          className={cn({ 'is-selected': isSelected === i })}
-          onClick={() => setIsSelected(i)}
-        >
-          {button}
-        </button>
-      ))}
+      <ContentWrapper className="header-content">
+        <img src="/logo.svg" alt="logo" />
+      </ContentWrapper>
     </div>
   );
 };
