@@ -1,0 +1,11 @@
+.movie-card {
+  width: 150px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
