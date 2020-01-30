@@ -5,6 +5,7 @@ import { StoreContext } from '@/contexts/StoreContext';
 import Slider from '@/components/Slider/Slider';
 import { fetchTopMovie } from '@/store/actions';
 import MovieCard from '@/components/MovieCard/MovieCard';
+import { isFetched } from '@/helpers/helpers';
 
 const SLIDER_DEFAULT_SETTING = {
   dots: false,
@@ -17,7 +18,7 @@ const SLIDER_DEFAULT_SETTING = {
 
 const TopMovieSlider = () => {
   const { state, dispatch } = useContext(StoreContext);
-  const { topMovies } = state;
+  const { fetchStatus, results } = state.topMovies;
 
   useEffect(() => {
     dispatch(fetchTopMovie());
@@ -27,8 +28,8 @@ const TopMovieSlider = () => {
     <div className="top-movie-finder">
       <ContentWrapper className="top-movie-finder-content">
         <Slider options={SLIDER_DEFAULT_SETTING}>
-          {topMovies ? (
-            topMovies.map(({ id, ...info }) => <MovieCard key={id} {...info} />)
+          {isFetched(fetchStatus) ? (
+            results.map(({ id, ...info }) => <MovieCard key={id} {...info} />)
           ) : (
             <div>loading...</div>
           )}
