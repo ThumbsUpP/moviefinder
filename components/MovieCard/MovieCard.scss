@@ -1,11 +1,24 @@
 .movie-card {
   width: 150px;
-  height: 450px;
+  height: auto;
   display: flex;
   flex-direction: column;
 
   img {
     width: 100%;
     border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+  }
+  &__date {
+    font-size: 16px;
+    font-weight: bold;
+    color: grey;
   }
 }
