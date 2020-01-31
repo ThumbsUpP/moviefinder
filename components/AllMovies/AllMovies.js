@@ -1,5 +1,5 @@
 import './AllMovies.scss';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { StoreContext } from '@/contexts/StoreContext';
 import ContentWrapper from '@/components/ContentWrapper/ContentWrapper';
 import { fetchAllMovie } from '@/store/actions';
@@ -28,7 +28,7 @@ const AllMovies = () => {
           {!!results &&
             results.map(({ id, ...info }) => (
               <li key={id}>
-                <MovieCard {...info} />
+                <MovieCard {...info} className="all-movie" />
               </li>
             ))}
         </ul>

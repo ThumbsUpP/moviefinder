@@ -6,6 +6,9 @@
 
   @include for-mobile {
     width: 80px;
+    &.all-movie {
+      width: 50%;
+    }
   }
   img {
     width: 100%;
