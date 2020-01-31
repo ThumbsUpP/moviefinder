@@ -12,6 +12,11 @@ const initialState = {
     fetchStatus: NOT_FETCHED,
     results: [],
   },
+  allMovies: {
+    fetchStatus: NOT_FETCHED,
+    results: [],
+    page: 1,
+  },
 };
 
 const StoreProvider = ({ children }) => {

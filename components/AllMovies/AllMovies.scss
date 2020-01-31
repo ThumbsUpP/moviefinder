@@ -1,0 +1,27 @@
+.all-movies {
+  h1 {
+    color: white;
+    font-size: 20px;
+    padding-left: 25px;
+    margin-bottom: 40px;
+
+    @include for-mobile {
+      font-size: 16px;
+      padding-left: 15px;
+      margin-bottom: 0;
+    }
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      flex-basis: 25%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 32px;
+      @include for-mobile {
+        flex-basis: 50%;
+      }
+    }
+  }
+}

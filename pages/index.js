@@ -6,6 +6,7 @@ import Layout from '@/template/Layout';
 import TopMovieSlider from '@/components/TopMovieSlider/TopMovieSlider';
 import StoreProvider from '@/contexts/StoreContext';
 import IsMobileProvider from '@/contexts/IsMobileContext';
+import AllMovies from '@/components/AllMovies/AllMovies';
 
 const Home = () => (
   <StoreProvider>
@@ -27,6 +28,7 @@ const Home = () => (
           />
         </Head>
         <TopMovieSlider />
+        <AllMovies />
       </Layout>
     </IsMobileProvider>
   </StoreProvider>
