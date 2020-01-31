@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import './TopMovieSlider.scss';
 import ContentWrapper from '@/components/ContentWrapper/ContentWrapper';
 import { StoreContext } from '@/contexts/StoreContext';
+import { IsMobileContext } from '@/contexts/IsMobileContext';
 import Slider from '@/components/Slider/Slider';
 import { fetchTopMovie } from '@/store/actions';
 import MovieCard from '@/components/MovieCard/MovieCard';
@@ -16,8 +17,17 @@ const SLIDER_DEFAULT_SETTING = {
   autoplay: false,
 };
 
+const SLIDER_MOBILE_SETTING = {
+  dots: false,
+  infinite: true,
+  slidesToShow: 4,
+  autoplay: false,
+  swipeToSlide: true,
+};
+
 const TopMovieSlider = () => {
   const { state, dispatch } = useContext(StoreContext);
+  const isMobile = useContext(IsMobileContext);
   const { fetchStatus, results } = state.topMovies;
 
   useEffect(() => {
@@ -27,7 +37,10 @@ const TopMovieSlider = () => {
   return (
     <div className="top-movie-finder">
       <ContentWrapper className="top-movie-finder-content">
-        <Slider options={SLIDER_DEFAULT_SETTING}>
+        <h1>Les 10 meilleurs films</h1>
+        <Slider
+          options={isMobile ? SLIDER_MOBILE_SETTING : SLIDER_DEFAULT_SETTING}
+        >
           {isFetched(fetchStatus) ? (
             results.map(({ id, ...info }) => <MovieCard key={id} {...info} />)
           ) : (

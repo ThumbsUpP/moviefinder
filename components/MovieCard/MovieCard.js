@@ -6,7 +6,6 @@ const baseUrl = 'http://image.tmdb.org/t/p/w185/';
 
 const MovieCard = ({ poster_path, original_title, release_date }) => {
   const date = release_date.match(/\d{4}/);
-  console.log(date);
   return (
     <div className="movie-card">
       <img src={`${baseUrl}${poster_path}`} alt={original_title} />

@@ -1,6 +1,11 @@
 .generic-slider {
   height: 100%;
-  padding: 0 40px;
+  padding: 0 90px;
+
+  @include for-mobile {
+    padding: 40px 0 0;
+    width: 115%;
+  }
 
   .slick-list,
   .slick-track {
@@ -20,6 +25,9 @@
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     &:before {
+      display: none;
+    }
+    @include for-mobile {
       display: none;
     }
   }

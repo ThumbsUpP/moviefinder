@@ -7,3 +7,5 @@ export const FETCH_STATUSES = {
   FETCHING: 'FETCHING',
   NOT_FETCHED: 'NOT_FETCHED',
 };
+
+export const MOBILE_MAX_WIDTH = 800;
