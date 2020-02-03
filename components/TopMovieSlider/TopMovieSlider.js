@@ -20,10 +20,10 @@ const SLIDER_DEFAULT_SETTING = {
 
 const SLIDER_MOBILE_SETTING = {
   dots: false,
-  infinite: true,
-  slidesToShow: 4,
-  autoplay: false,
-  swipeToSlide: true,
+  arrows: true,
+  slidesToShow: 3,
+  centerMode: false,
+  slidesToScroll: 3,
 };
 
 const TopMovieSlider = () => {

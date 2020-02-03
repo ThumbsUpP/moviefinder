@@ -1,6 +1,13 @@
 .top-movies {
+  overflow: hidden;
   &__content {
-    overflow: hidden;
+    padding-bottom: 60px;
+    border-bottom: 1px solid $buttonColor;
+    margin-bottom: 60px;
+    @include for-mobile {
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
   }
 
   h1 {
