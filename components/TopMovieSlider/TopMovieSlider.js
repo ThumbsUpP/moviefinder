@@ -7,6 +7,7 @@ import Slider from '@/components/Slider/Slider';
 import { fetchTopMovie } from '@/store/actions';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import { isFetched } from '@/helpers/helpers';
+import Loader from '@/components/Loader/Loader';
 
 const SLIDER_DEFAULT_SETTING = {
   dots: false,
@@ -35,8 +36,8 @@ const TopMovieSlider = () => {
   }, []);
 
   return (
-    <div className="top-movie-finder">
-      <ContentWrapper className="top-movie-finder-content">
+    <div className="top-movies">
+      <ContentWrapper className="top-movies__content">
         <h1>Les 10 meilleurs films</h1>
         <Slider
           options={isMobile ? SLIDER_MOBILE_SETTING : SLIDER_DEFAULT_SETTING}
@@ -44,7 +45,7 @@ const TopMovieSlider = () => {
           {isFetched(fetchStatus) ? (
             results.map(({ id, ...info }) => <MovieCard key={id} {...info} />)
           ) : (
-            <div>loading...</div>
+            <Loader className="top-movies" />
           )}
         </Slider>
       </ContentWrapper>

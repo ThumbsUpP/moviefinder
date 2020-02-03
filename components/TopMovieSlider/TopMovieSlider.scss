@@ -1,4 +1,8 @@
-.top-movie-finder {
+.top-movies {
+  &__content {
+    overflow: hidden;
+  }
+
   h1 {
     color: white;
     font-size: 20px;

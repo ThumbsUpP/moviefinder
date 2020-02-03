@@ -6,6 +6,7 @@ import { fetchAllMovie } from '@/store/actions';
 import { isFetching } from '@/helpers/helpers';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import useInfiniteScroll from '@/hook/useInfiniteScroll';
+import Loader from '@/components/Loader/Loader';
 
 const AllMovies = () => {
   const { state, dispatch } = useContext(StoreContext);
@@ -32,7 +33,7 @@ const AllMovies = () => {
               </li>
             ))}
         </ul>
-        {isFetching(fetchStatus) && <div>loading...</div>}
+        {isFetching(fetchStatus) && <Loader />}
       </ContentWrapper>
     </div>
   );
