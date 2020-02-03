@@ -39,11 +39,11 @@
         height: 30px;
         border-radius: 30px;
         padding: 5px 5px 5px 15px;
-        color: $buttonColor;
+        color: $secondColor;
         background-color: #273b55;
         min-width: 220px;
         &::placeholder {
-          color: $buttonColor;
+          color: $secondColor;
         }
       }
 

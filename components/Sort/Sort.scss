@@ -1,7 +1,7 @@
 .sort {
   padding-left: 25px;
   display: flex;
-  color: $buttonColor;
+  color: $secondColor;
   align-items: center;
   margin-bottom: 40px;
   font-weight: bold;
@@ -25,8 +25,8 @@
 
     &__button {
       min-width: 210px;
-      border: 2px solid $buttonColor;
-      color: $buttonColor;
+      border: 2px solid $secondColor;
+      color: $secondColor;
       height: 50px;
       background-color: #112339;
       margin-left: 25px;

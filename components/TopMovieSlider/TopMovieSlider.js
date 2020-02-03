@@ -24,6 +24,7 @@ const SLIDER_MOBILE_SETTING = {
   slidesToShow: 3,
   centerMode: false,
   slidesToScroll: 3,
+  infinite: true,
 };
 
 const TopMovieSlider = () => {
