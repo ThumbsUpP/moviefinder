@@ -1,7 +1,7 @@
 .sort {
   padding-left: 25px;
   display: flex;
-  color: #516c8f;
+  color: $buttonColor;
   align-items: center;
   margin-bottom: 40px;
   font-weight: bold;
@@ -15,7 +15,8 @@
     flex-direction: column;
     &__button {
       min-width: 170px;
-      border: 2px solid #516c8f;
+      border: 2px solid $buttonColor;
+      color: $buttonColor;
       height: 50px;
       background-color: #112339;
       margin-left: 25px;

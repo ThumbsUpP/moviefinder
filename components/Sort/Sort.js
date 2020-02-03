@@ -10,11 +10,14 @@ const { DATE, ORGINAL_TITLE } = SORT_BY;
 const Sort = () => {
   const { dispatch } = useContext(StoreContext);
   const [selectHidden, setSelectHidden] = useState(true);
+  const [selectedSort, setSelectSort] = useState('Ordre alphabétique');
 
   const handleSort = pos => {
     let action = pos === 'top' ? ORGINAL_TITLE : DATE;
+    let sortName = pos === 'top' ? 'Ordre alphabétique' : 'Date';
     dispatch(sortResult(action));
     setSelectHidden(true);
+    setSelectSort(sortName);
   };
 
   return (
@@ -26,7 +29,7 @@ const Sort = () => {
             className="sort__select__button"
             onClick={() => setSelectHidden(!selectHidden)}
           >
-            Ordre alphabétique
+            {selectedSort}
           </button>
         ) : (
           <>

@@ -3,31 +3,33 @@
   position: relative;
   width: 100%;
   height: 100%;
-  &__background {
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-image: url('/backgroundimg.jpg'),
-      linear-gradient(#0d1d37b8 0%, #112339 100%);
-    position: absolute;
-    width: 100%;
-    top: 0;
-    width: 100%;
-    height: 0;
-    padding-top: 66.64%;
-    background-blend-mode: multiply;
-  }
   padding-top: 150px;
+  font-family: 'Roboto';
+
   &:before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #112339;
+    background-color: $backgroundColor;
     top: 0;
     left: 0;
   }
 
+  &__background {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url('/backgroundimg.jpg'),
+      linear-gradient(#0d1d37b8 0%, $backgroundColor 100%);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 70%;
+    background-blend-mode: multiply;
+  }
+
   @include for-mobile {
-    padding-top: 220px;
+    padding-top: 190px;
   }
 }
