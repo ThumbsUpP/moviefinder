@@ -1,5 +1,10 @@
 import { API_KEY, BASE_URL, FETCH_STATUSES } from '@/constants.js';
-import { SET_ALL_MOVIES, SET_FETCH_STATUS, SET_TOP_MOVIES } from './reducer';
+import {
+  SET_ALL_MOVIES,
+  SET_FETCH_STATUS,
+  SET_TOP_MOVIES,
+  SORT_RESULTS,
+} from './reducer';
 import axios from 'axios';
 
 const { FETCHED, ERROR, FETCHING } = FETCH_STATUSES;
@@ -46,3 +51,8 @@ export const fetchTopMovie = () => {
       .catch(() => dispatch(setFetchStatus('topMovies', ERROR)));
   };
 };
+
+export const sortResult = propName => ({
+  type: SORT_RESULTS,
+  propName,
+});

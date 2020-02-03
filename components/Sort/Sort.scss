@@ -1,0 +1,44 @@
+.sort {
+  padding-left: 25px;
+  display: flex;
+  color: #516c8f;
+  align-items: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+
+  @include for-mobile {
+    margin-bottom: 20px;
+  }
+  &__select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &__button {
+      min-width: 170px;
+      border: 2px solid #516c8f;
+      height: 50px;
+      background-color: #112339;
+      margin-left: 25px;
+      border-radius: 15px;
+
+      &--top {
+        background-color: #273b55 !important;
+        border-radius: 15px 15px 0 0;
+        z-index: 3;
+        &.hidden {
+          border-radius: 15px;
+        }
+      }
+      &--bottom {
+        position: absolute;
+        top: 50px;
+        border-radius: 0 0 15px 15px;
+        border-top: none;
+        background-color: #273b55;
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+  }
+}

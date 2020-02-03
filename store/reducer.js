@@ -3,6 +3,7 @@ import { take } from 'lodash/fp';
 export const SET_TOP_MOVIES = 'SET_TOP_MOVIES';
 export const SET_ALL_MOVIES = 'SET_ALL_MOVIES';
 export const SET_FETCH_STATUS = 'SET_FETCH_STATUS';
+export const SORT_RESULTS = 'SORT_RESULTS';
 
 const reducer = (state, { type, ...action }) => {
   switch (type) {
@@ -25,6 +26,18 @@ const reducer = (state, { type, ...action }) => {
           results: [...state.allMovies.results, ...results],
           fetchStatus,
           page,
+        },
+      };
+    }
+    case SORT_RESULTS: {
+      const { propName } = action;
+      return {
+        ...state,
+        allMovies: {
+          ...state.allMovies,
+          results: state.allMovies.results.sort((a, b) =>
+            a[propName] > b[propName] ? 1 : -1
+          ),
         },
       };
     }

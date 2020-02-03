@@ -5,6 +5,7 @@ import ContentWrapper from '@/components/ContentWrapper/ContentWrapper';
 import { fetchAllMovie } from '@/store/actions';
 import { isFetching } from '@/helpers/helpers';
 import MovieCard from '@/components/MovieCard/MovieCard';
+import Sort from '@/components/Sort/Sort';
 import useInfiniteScroll from '@/hook/useInfiniteScroll';
 import Loader from '@/components/Loader/Loader';
 
@@ -25,6 +26,7 @@ const AllMovies = () => {
     <div className="all-movies">
       <ContentWrapper>
         <h1>Tous les films</h1>
+        <Sort />
         <ul>
           {!!results &&
             results.map(({ id, ...info }) => (

@@ -9,3 +9,8 @@ export const FETCH_STATUSES = {
 };
 
 export const MOBILE_MAX_WIDTH = 800;
+
+export const SORT_BY = {
+  DATE: 'release_date',
+  ORGINAL_TITLE: 'title',
+};
