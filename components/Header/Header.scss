@@ -39,16 +39,16 @@
         height: 30px;
         border-radius: 30px;
         padding: 5px 5px 5px 15px;
-        color: lightgrey;
+        color: $buttonColor;
         background-color: #273b55;
         min-width: 220px;
+        &::placeholder {
+          color: $buttonColor;
+        }
       }
 
       @include for-mobile {
         width: 80%;
-        svg {
-          padding-right: 30px;
-        }
         &__search {
           width: 80%;
         }

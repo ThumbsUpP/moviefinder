@@ -15,8 +15,16 @@
     position: relative;
     display: flex;
     flex-direction: column;
+
+    &__arrow {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 22px;
+    }
+
     &__button {
-      min-width: 170px;
+      min-width: 210px;
       border: 2px solid $buttonColor;
       color: $buttonColor;
       height: 50px;

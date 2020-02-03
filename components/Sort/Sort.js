@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { StoreContext } from '@/contexts/StoreContext';
 import { sortResult } from '@/store/actions';
 import { SORT_BY } from '@/constants.js';
+import DropDownArrow from '@/public/dropdownarrow.svg';
 import cn from 'classnames';
 
 const { DATE, ORGINAL_TITLE } = SORT_BY;
@@ -24,6 +25,7 @@ const Sort = () => {
     <div className="sort">
       Trier par :
       <div className="sort__select">
+        <DropDownArrow className="sort__select__arrow" />
         {selectHidden ? (
           <button
             className="sort__select__button"
