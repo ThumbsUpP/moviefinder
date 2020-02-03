@@ -7,7 +7,7 @@
   @include for-mobile {
     width: 80px;
     &.all-movie {
-      width: 50%;
+      width: 80%;
     }
   }
   img {
@@ -16,6 +16,7 @@
     margin-bottom: 20px;
     @include for-mobile {
       border-radius: 10px;
+      margin-bottom: 10px;
     }
   }
 
@@ -26,6 +27,7 @@
     margin-bottom: 10px;
     @include for-mobile {
       font-size: 14px;
+      margin-bottom: 5px;
     }
   }
   &__date {

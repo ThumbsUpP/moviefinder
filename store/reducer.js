@@ -1,4 +1,7 @@
 import { take } from 'lodash/fp';
+import { SORT_BY } from '@/constants.js';
+
+const { DATE } = SORT_BY;
 
 export const SET_TOP_MOVIES = 'SET_TOP_MOVIES';
 export const SET_ALL_MOVIES = 'SET_ALL_MOVIES';
@@ -36,7 +39,13 @@ const reducer = (state, { type, ...action }) => {
         allMovies: {
           ...state.allMovies,
           results: state.allMovies.results.sort((a, b) =>
-            a[propName] > b[propName] ? 1 : -1
+            propName === DATE
+              ? a[propName] < b[propName]
+                ? 1
+                : -1
+              : a[propName] > b[propName]
+              ? 1
+              : -1
           ),
         },
       };
