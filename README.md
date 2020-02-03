@@ -1,6 +1,6 @@
 # MovieFinder app
 
-Simple App to find movie base on [themoviedb](themoviedb.org)
+Simple App to find movies based on [themoviedb](themoviedb.org)
 
 ## Stack:
 
